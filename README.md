@@ -80,7 +80,7 @@ script
 ```ShellSession
 # container-snap list-images
 43de4dcfccec5cd0b92c04afe1bbde645ff24bff5ff8845b73e82ae8bfd58e74,2025-01-09 10:47:31.818647723 +0000 UTC,registry.opensuse.org/home/dancermak/containers/opensuse/bootable:latest
-# container-snap-switch-snapshot 43de4dcfccec5cd0b92c04afe1bbde645ff24bff5ff8845b73e82ae8bfd58e74
+# container-snap-switch-snapshot.sh 43de4dcfccec5cd0b92c04afe1bbde645ff24bff5ff8845b73e82ae8bfd58e74
 ````
 
 The script performs currently a few ugly but necessary steps (like copying
