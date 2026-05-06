@@ -53,9 +53,6 @@ following requirements:
 
 - `container-snap` must be present in the image under `/usr/bin/container-snap`
 
-- `snapper` must **not** be installed (otherwise `transactional-update`/`tukit`
-  will default to `snapper`)
-
 - `transactional-update` must be installed in the image and must include
   [transactional-update#137](https://github.com/openSUSE/transactional-update/pull/137).
 
@@ -70,9 +67,10 @@ pull down an image, e.g.:
 # container-snap pull registry.opensuse.org/home/dancermak/containers/opensuse/bootable:latest
 ```
 
-Ensure that `snapper` is not present on the system by de-installing it:
+Configure `container-snap` as the backend for `transactional-update`:
 ```ShellSession
-# zypper -n rm snapper
+# mkdir -p /etc/tukit.conf.d
+# echo 'SNAPSHOT_MANAGER="containersnap"' > /etc/tukit.conf.d/container-snap.conf
 ```
 
 Now switch to the image that you just pulled down. You can use the convenience
